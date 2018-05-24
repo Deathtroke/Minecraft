@@ -9,6 +9,8 @@ scoreboard objectives add MG dummy
 scoreboard objectives add sniper dummy
 scoreboard objectives add GrenadeLouncher dummy
 scoreboard objectives add shotgun dummy
+scoreboard objectives add Revolver dummy
+scoreboard objectives add MP dummy
 scoreboard objectives add ShotgunHitCount dummy
 scoreboard objectives add divisor dummy
 scoreboard objectives add factor dummy
