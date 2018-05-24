@@ -1,0 +1,13 @@
+{
+  "values":[
+	"minecraft:air",
+	"minecraft:water",
+	"#minecraft:rails",
+	"#minecraft:buttons",
+	"#minecraft:carpets",
+	"#minecraft:coral_fans",
+	"#minecraft:corals",
+	"#minecraft:flower_pots",
+	"#minecraft:saplings"
+  ]
+}
