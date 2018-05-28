@@ -1,6 +1,7 @@
 {
   "values":[
 	"raycast:main",
-	"raycast:game"
+	"raycast:game",
+	"raycast:damage"
   ]
 }

@@ -2,11 +2,11 @@
 tp @s ^ ^ ^0.5 ~ ~
 
 #Entity-Hit-Event
-execute if entity @e[tag=!shotgun,distance=..1] run scoreboard players add @e[tag=!shotgun,distance=..1] ShotgunHitCount 1
-execute if entity @e[tag=!shotgun,distance=..1] run kill @s
+execute if entity @e[tag=!shotgun,distance=..1] run scoreboard players add @e[tag=!shotgun,distance=..1] get_damage 4
+execute positioned ^ ^ ^-1 if entity @e[tag=!shotgun,distance=..1] run kill @s
 
-execute positioned ^ ^-1 ^ if entity @e[tag=!shotgun,distance=..1] run scoreboard players add @e[tag=!shotgun,distance=..1] ShotgunHitCount 2
-execute positioned ^ ^-1 ^ if entity @e[tag=!shotgun,distance=..1] run kill @s
+execute positioned ^ ^-1 ^ if entity @e[tag=!shotgun,distance=..1] run scoreboard players add @e[tag=!shotgun,distance=..1] get_damage 6
+execute positioned ^ ^-1 ^-1 if entity @e[tag=!shotgun,distance=..1] run kill @s
 
 particle minecraft:crit
 

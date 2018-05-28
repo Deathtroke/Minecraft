@@ -2,13 +2,11 @@
 tp @s ^ ^ ^1 ~ ~
 
 #Entity-Hit-Event
-execute if entity @e[tag=!MG,distance=..1] run effect give @e[tag=!MG,distance=..1] minecraft:absorption 1 1 true
-execute if entity @e[tag=!MG,distance=..1] run effect give @e[tag=!MG,distance=..1] minecraft:instant_damage 1 1 true
-execute if entity @e[tag=!MG,distance=..1] run kill @s
+execute if entity @e[tag=!MG,distance=..1] run scoreboard players add @e[tag=!mg,distance=..1] get_damage 6
+execute positioned ^ ^ ^-1 if entity @e[tag=!MG,distance=..1] run kill @s
 
-execute positioned ^ ^-1 ^ if entity @e[tag=!MG,distance=..1] run effect give @e[tag=!MG,distance=..1] minecraft:absorption 1 2 true
-execute positioned ^ ^-1 ^ if entity @e[tag=!MG,distance=..1] run effect give @e[tag=!MG,distance=..1] minecraft:instant_damage 1 2 true
-execute positioned ^ ^-1 ^ if entity @e[tag=!MG,distance=..1] run kill @s
+execute positioned ^ ^-1 ^ if entity @e[tag=!MG,distance=..1] run scoreboard players add @e[tag=!mg,distance=..1] get_damage 9
+execute positioned ^ ^-1 ^-1 if entity @e[tag=!MG,distance=..1] run kill @s
 
 particle minecraft:crit
 

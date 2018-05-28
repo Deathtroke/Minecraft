@@ -62,6 +62,9 @@ execute as @a[scores={cooldown=2,amunition1=..1,class=4}] at @s run scoreboard p
 execute as @a[scores={cooldown=2,amunition1=..1,class=5}] at @s run scoreboard players set @s amunition1 5
 execute as @a[scores={cooldown=2,amunition2=..1,class=1}] at @s run scoreboard players set @s amunition2 4
 execute as @a[scores={cooldown=2,amunition2=..1,class=2}] at @s run scoreboard players set @s amunition2 20
+execute as @a[scores={cooldown=2,amunition2=..1,class=3}] at @s run scoreboard players set @s amunition2 20
+execute as @a[scores={cooldown=2,amunition2=..1,class=4}] at @s run scoreboard players set @s amunition2 4
+execute as @a[scores={cooldown=2,amunition2=..1,class=5}] at @s run scoreboard players set @s amunition2 20
 #xp set @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Damage:1}}},scores={cooldown=2}] 3 levels
 #xp set @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Damage:2}}},scores={cooldown=2}] 30 levels
 #xp set @a[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Damage:3}}},scores={cooldown=2}] 5 levels
@@ -467,7 +470,7 @@ execute as @a[scores={Revolver=1..,amunition2=..0}] at @s run scoreboard players
 tag @e[type=area_effect_cloud,tag=!setup,tag=Revolver] add setup
 
 #mp
-execute as @a[scores={MP=1..}] at @s run summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["MP"],Duration:500}
+execute as @a[scores={MP=1..}] at @s run summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["MP"],Duration:75}
 execute as @a[scores={MP=1..}] at @s positioned ~ ~1 ~ run tp @e[type=area_effect_cloud,tag=!setup,tag=MP] @s
 execute anchored eyes as @a[scores={MP=1..}] at @s run tp @e[type=area_effect_cloud,tag=!setup,tag=MP] ^ ^ ^1
 execute as @e[type=area_effect_cloud,tag=!setup,tag=MP] at @s run execute unless block ~ ~ ~ #raycast:nonsolid run kill @s
@@ -510,26 +513,4 @@ scoreboard players reset @a[scores={shotgun=1..}] shotgun
 scoreboard players reset @a[scores={Revolver=1..}] Revolver
 scoreboard players reset @a[scores={Revolver=1..}] MP
 
-
-#Shotgun Damage
-execute if entity @e[scores={ShotgunHitCount=18..}] run effect give @e[scores={ShotgunHitCount=18..}] minecraft:absorption 1 3 true
-execute if entity @e[scores={ShotgunHitCount=18..}] run effect give @e[scores={ShotgunHitCount=18..}] minecraft:instant_damage 1 4 true
-execute if entity @e[scores={ShotgunHitCount=16..17}] run effect give @e[scores={ShotgunHitCount=16..17}] minecraft:absorption 1 4 true
-execute if entity @e[scores={ShotgunHitCount=16..17}] run effect give @e[scores={ShotgunHitCount=16..17}] minecraft:instant_damage 1 4 true
-execute if entity @e[scores={ShotgunHitCount=14..15}] run effect give @e[scores={ShotgunHitCount=14..15}] minecraft:absorption 1 5 true
-execute if entity @e[scores={ShotgunHitCount=14..15}] run effect give @e[scores={ShotgunHitCount=14..15}] minecraft:instant_damage 1 4 true
-#execute if entity @e[scores={ShotgunHitCount=12..13}] run effect give @e[scores={ShotgunHitCount=12..13}] minecraft:absorption 1 0 true
-execute if entity @e[scores={ShotgunHitCount=12..13}] run effect give @e[scores={ShotgunHitCount=12..13}] minecraft:instant_damage 1 3 true
-execute if entity @e[scores={ShotgunHitCount=10..11}] run effect give @e[scores={ShotgunHitCount=10..11}] minecraft:absorption 1 7 true
-execute if entity @e[scores={ShotgunHitCount=10..11}] run effect give @e[scores={ShotgunHitCount=10..11}] minecraft:instant_damage 1 4 true
-execute if entity @e[scores={ShotgunHitCount=8..9}] run effect give @e[scores={ShotgunHitCount=8..9}] minecraft:absorption 1 8 true
-execute if entity @e[scores={ShotgunHitCount=8..9}] run effect give @e[scores={ShotgunHitCount=8..9}] minecraft:instant_damage 1 4 true
-#execute if entity @e[scores={ShotgunHitCount=6..7}] run effect give @e[scores={ShotgunHitCount=6..7}] minecraft:absorption 1 0 true
-execute if entity @e[scores={ShotgunHitCount=6..7}] run effect give @e[scores={ShotgunHitCount=6..7}] minecraft:instant_damage 1 2 true
-execute if entity @e[scores={ShotgunHitCount=4..5}] run effect give @e[scores={ShotgunHitCount=4..5}] minecraft:absorption 1 1 true
-execute if entity @e[scores={ShotgunHitCount=4..5}] run effect give @e[scores={ShotgunHitCount=4..5}] minecraft:instant_damage 1 2 true
-execute if entity @e[scores={ShotgunHitCount=2..3}] run effect give @e[scores={ShotgunHitCount=2..3}] minecraft:absorption 1 2 true
-execute if entity @e[scores={ShotgunHitCount=2..3}] run effect give @e[scores={ShotgunHitCount=2..3}] minecraft:instant_damage 1 2 true
-execute if entity @e[scores={ShotgunHitCount=1}] run effect give @e[scores={ShotgunHitCount=1}] minecraft:absorption 1 3 true
-execute if entity @e[scores={ShotgunHitCount=1}] run effect give @e[scores={ShotgunHitCount=1}] minecraft:instant_damage 1 2 true
-execute if entity @e[scores={ShotgunHitCount=1..}] run scoreboard players reset @e[scores={ShotgunHitCount=1..}] ShotgunHitCount
+tag @e[type=area_effect_cloud,tag=!p] add p

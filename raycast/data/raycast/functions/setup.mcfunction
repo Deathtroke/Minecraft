@@ -28,6 +28,8 @@ scoreboard objectives add class trigger
 scoreboard objectives add amunition1 dummy
 scoreboard objectives add amunition2 dummy
 scoreboard objectives add Lives dummy
+scoreboard objectives add get_damage dummy
+scoreboard objectives add TotalAlive dummy
 
 team add Team1
 team add Team2
